@@ -27,6 +27,7 @@ interface MotorcycleShop {
   address?: Address;
   contact?: Contact;
   country_code?: string;
+  country_name?:string;
   shop_tags?: Record<string, string>;
 }
 
@@ -60,7 +61,7 @@ useEffect(() => {
       <ul>
         {shops.map((shop) => (
           <li key={shop.id} className="info_container">
-            <strong>{shop.name}</strong> — {shop.address?.city}, {shop.country_code}
+             <strong>{shop.name}</strong> — {shop.address?.city}, {shop.country_name} ({shop.country_code})
             <br />
             {shop.contact?.phone && <span>📞 {shop.contact.phone}</span>}
             <br />

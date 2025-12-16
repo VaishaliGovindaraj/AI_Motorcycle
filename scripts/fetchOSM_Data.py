@@ -11,7 +11,6 @@ load_dotenv()
 SUPABASE_URL = os.getenv("SUPABASE_URL")
 SUPABASE_KEY = os.getenv("SUPABASE_KEY")
 
-# 👇 Add this here temporarily
 print("SUPABASE_URL:", SUPABASE_URL)
 print("SUPABASE_KEY prefix:", SUPABASE_KEY[:10])
 
@@ -23,6 +22,37 @@ EU_COUNTRIES = [
     "HU", "PT", "IE", "DK", "EE", "LT", "LV", "SI", "HR", "RO", "BG",
     "CY", "LU", "MT", "EL"
 ]
+
+# ---------- ✅ Add country mapping here ----------
+EU_COUNTRY_NAMES = {
+    "DE": "Germany",
+    "FR": "France",
+    "IT": "Italy",
+    "ES": "Spain",
+    "PL": "Poland",
+    "NL": "Netherlands",
+    "SE": "Sweden",
+    "FI": "Finland",
+    "BE": "Belgium",
+    "AT": "Austria",
+    "CZ": "Czech Republic",
+    "SK": "Slovakia",
+    "HU": "Hungary",
+    "PT": "Portugal",
+    "IE": "Ireland",
+    "DK": "Denmark",
+    "EE": "Estonia",
+    "LT": "Lithuania",
+    "LV": "Latvia",
+    "SI": "Slovenia",
+    "HR": "Croatia",
+    "RO": "Romania",
+    "BG": "Bulgaria",
+    "CY": "Cyprus",
+    "LU": "Luxembourg",
+    "MT": "Malta",
+    "EL": "Greece"
+}
 
 # ---------- Helper function to fetch data ----------
 def fetch_overpass_data(country_code):
@@ -45,6 +75,8 @@ def fetch_overpass_data(country_code):
 # ---------- Helper to format data ----------
 def format_records(data, country_code):
     records = []
+    country_name = EU_COUNTRY_NAMES.get(country_code, "Unknown")
+
     for element in data.get("elements", []):
         tags = element.get("tags", {})
         if not tags:
@@ -53,6 +85,7 @@ def format_records(data, country_code):
         record = {
             "id": element["id"],
             "country_code": tags.get("addr:country", country_code),
+            "country_name": country_name,  # ✅ Add country_name
             "name": tags.get("name"),
             "lat": element.get("lat"),
             "lon": element.get("lon"),
@@ -85,13 +118,13 @@ for code in EU_COUNTRIES:
             print(f"No data for {code}")
             continue
 
-        # Batch insert (100 rows at a time)
+        # ✅ Batch insert (100 rows at a time)
         for i in range(0, len(records), 100):
             chunk = records[i:i+100]
             supabase.table("motorcycle_shops").upsert(chunk).execute()
 
         print(f"Inserted {len(records)} records for {code}")
-        
+
         # Be kind to Overpass API
         time.sleep(10)
 
