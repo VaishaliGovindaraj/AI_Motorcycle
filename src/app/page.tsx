@@ -1,11 +1,9 @@
-import Image from "next/image";
-import styles from "./page.module.css";
-import MotorcycleShops from "@/components/MotorcycleShops";
+import EnhancedMotorcycleShops from "@/components/MotorcycleShops/EnhancedUI";
 
 export default function Home() {
   return (
     <div>
-      <MotorcycleShops />
+      <EnhancedMotorcycleShops />
     </div>
   );
 }
