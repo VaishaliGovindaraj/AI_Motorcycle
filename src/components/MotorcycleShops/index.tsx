@@ -178,29 +178,6 @@ export default function MotorcycleShops() {
   }
 
   return (
-<<<<<<< HEAD
-    <div>
-      <h1>Motorcycle Shops in EU</h1>
-      <ul>
-        {shops.map((shop) => (
-          <li key={shop.id} className="info_container">
-             <strong>{shop.name}</strong> — {shop.address?.city}, {shop.country_name} ({shop.country_code})
-            <br />
-            {shop.contact?.phone && <span>📞 {shop.contact.phone}</span>}
-            <br />
-            {shop.contact?.website && (
-              <a
-                href={shop.contact.website}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                🌐 Website
-              </a>
-            )}
-          </li>
-        ))}
-      </ul>
-=======
     <div className={styles.container}>
       <header className={styles.header}>
         <h1>European Motorcycle Shops Directory</h1>
@@ -400,7 +377,6 @@ export default function MotorcycleShops() {
           )}
         </main>
       </div>
->>>>>>> 704677618f18aac4896606d86ba358fdddaf6885
     </div>
   );
 }
