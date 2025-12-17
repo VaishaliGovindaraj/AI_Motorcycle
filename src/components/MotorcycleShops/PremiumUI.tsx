@@ -199,6 +199,14 @@ export default function PremiumMotorcycleShops() {
     });
 
     result.sort((a, b) => {
+      // Always put unnamed shops at the end
+      const aHasName = a.name && a.name.trim() !== '';
+      const bHasName = b.name && b.name.trim() !== '';
+
+      if (aHasName && !bHasName) return -1; // a (named) comes before b (unnamed)
+      if (!aHasName && bHasName) return 1;  // b (named) comes before a (unnamed)
+
+      // Both have names or both don't have names - apply regular sorting
       if (sortBy === 'name') {
         return (a.name || '').localeCompare(b.name || '');
       } else if (sortBy === 'city') {
