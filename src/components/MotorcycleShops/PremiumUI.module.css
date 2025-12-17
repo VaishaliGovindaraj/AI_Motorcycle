@@ -1,6 +1,39 @@
 /* Premium UI Styles with Dark Mode Support */
 /* Theme variables are defined in globals.css */
 
+/* Light Mode Text Visibility Fixes */
+.container:not(.dark) .statNumber {
+  color: #1f2937;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.container:not(.dark) .breadcrumbCurrent,
+.container:not(.dark) .sidebarSection h4,
+.container:not(.dark) .sidebarHeader h3 {
+  color: #1f2937 !important;
+}
+
+.container:not(.dark) .countryName,
+.container:not(.dark) .cityName {
+  color: #374151 !important;
+}
+
+/* Ensure white text on gradient backgrounds */
+.container .loadingContainer,
+.container .errorContainer,
+.container .footer {
+  color: white !important;
+}
+
+.container .loadingContainer h2,
+.container .errorContainer h2,
+.container .errorContainer p {
+  color: white !important;
+}
+
 /* Container */
 .container {
   min-height: 100vh;
@@ -12,6 +45,7 @@
 .container.dark {
   background: linear-gradient(135deg, #1e3a8a 0%, #581c87 100%);
 }
+
 
 /* Premium Header */
 .header {
