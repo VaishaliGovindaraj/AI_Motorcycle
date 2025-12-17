@@ -158,26 +158,6 @@
             background: #f9fafb;
         }
 
-        .screenshot-placeholder {
-            background: #f0f0f0;
-            border: 2px dashed #999;
-            padding: 80px 20px;
-            text-align: center;
-            margin: 20px 0;
-            border-radius: 8px;
-            page-break-inside: avoid;
-        }
-
-        .screenshot-placeholder h3 {
-            color: #667eea;
-            margin-bottom: 15px;
-        }
-
-        .screenshot-placeholder p {
-            color: #666;
-            font-style: italic;
-        }
-
         .highlight-box {
             background: #e7f3ff;
             border-left: 4px solid #2196F3;
@@ -286,12 +266,40 @@
             background: #3b82f6;
         }
 
+        .live-site-banner {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: 600;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .live-site-banner a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 2px solid rgba(255,255,255,0.5);
+            padding-bottom: 2px;
+            transition: border-color 0.3s;
+        }
+
+        .live-site-banner a:hover {
+            border-bottom-color: white;
+        }
+
         @media print {
             .page {
                 page-break-after: always;
             }
 
             body {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            .live-site-banner {
                 print-color-adjust: exact;
                 -webkit-print-color-adjust: exact;
             }
@@ -336,6 +344,9 @@
 
 <!-- PAGE 1: EXECUTIVE SUMMARY -->
 <div class="page" id="page1">
+    <div class="live-site-banner">
+        🏍️ View Live Application: <a href="https://ai-motorcycle.vercel.app/" target="_blank">https://ai-motorcycle.vercel.app/</a>
+    </div>
     <h1>1. Executive Summary</h1>
 
     <h2>Project Overview</h2>
@@ -407,6 +418,9 @@
 
 <!-- PAGE 2: TECHNOLOGY STACK -->
 <div class="page" id="page2">
+    <div class="live-site-banner">
+        🏍️ View Live Application: <a href="https://ai-motorcycle.vercel.app/" target="_blank">https://ai-motorcycle.vercel.app/</a>
+    </div>
     <h1>2. Technology Stack & Architecture</h1>
 
     <h2>Frontend Stack</h2>
@@ -512,6 +526,9 @@ python scripts/ai_data_agent.py --mode once</code></pre>
 
 <!-- PAGE 3: FRONTEND COMPONENTS -->
 <div class="page" id="page3">
+    <div class="live-site-banner">
+        🏍️ View Live Application: <a href="https://ai-motorcycle.vercel.app/" target="_blank">https://ai-motorcycle.vercel.app/</a>
+    </div>
     <h1>3. Frontend Components Deep Dive</h1>
 
     <h2>Main Component: PremiumMotorcycleShops</h2>
@@ -692,6 +709,9 @@ const exportData = () => {
 
 <!-- PAGE 4: STATE MANAGEMENT -->
 <div class="page" id="page4">
+    <div class="live-site-banner">
+        🏍️ View Live Application: <a href="https://ai-motorcycle.vercel.app/" target="_blank">https://ai-motorcycle.vercel.app/</a>
+    </div>
     <h1>4. State Management & Data Flow</h1>
 
     <h2>State Architecture</h2>
@@ -856,6 +876,9 @@ const filteredShops = useMemo(() => {
 
 <!-- PAGE 5: STYLING SYSTEM -->
 <div class="page" id="page5">
+    <div class="live-site-banner">
+        🏍️ View Live Application: <a href="https://ai-motorcycle.vercel.app/" target="_blank">https://ai-motorcycle.vercel.app/</a>
+    </div>
     <h1>5. Styling System & Design Tokens</h1>
 
     <h2>CSS Architecture</h2>
@@ -1028,6 +1051,9 @@ const filteredShops = useMemo(() => {
 
 <!-- PAGE 6: KEY FEATURES -->
 <div class="page" id="page6">
+    <div class="live-site-banner">
+        🏍️ View Live Application: <a href="https://ai-motorcycle.vercel.app/" target="_blank">https://ai-motorcycle.vercel.app/</a>
+    </div>
     <h1>6. Key Features Implementation</h1>
 
     <h2>1. Dark Mode Toggle</h2>
@@ -1194,6 +1220,9 @@ const toggleFavorite = (shopId: number) => {
 
 <!-- PAGE 7: DATABASE -->
 <div class="page" id="page7">
+    <div class="live-site-banner">
+        🏍️ View Live Application: <a href="https://ai-motorcycle.vercel.app/" target="_blank">https://ai-motorcycle.vercel.app/</a>
+    </div>
     <h1>7. Database Schema & Backend</h1>
 
     <h2>Supabase Configuration</h2>
@@ -1367,6 +1396,9 @@ supabase.table("motorcycle_shops").upsert(records).execute()</code></pre>
 
 <!-- PAGE 8: BEST PRACTICES -->
 <div class="page" id="page8">
+    <div class="live-site-banner">
+        🏍️ View Live Application: <a href="https://ai-motorcycle.vercel.app/" target="_blank">https://ai-motorcycle.vercel.app/</a>
+    </div>
     <h1>8. Code Examples & Best Practices</h1>
 
     <h2>TypeScript Best Practices</h2>
@@ -1516,6 +1548,9 @@ const supabaseUrl = "https://xyz.supabase.co";</code></pre>
 
 <!-- PAGE 9: PERFORMANCE -->
 <div class="page" id="page9">
+    <div class="live-site-banner">
+        🏍️ View Live Application: <a href="https://ai-motorcycle.vercel.app/" target="_blank">https://ai-motorcycle.vercel.app/</a>
+    </div>
     <h1>9. Performance & Optimization</h1>
 
     <h2>Performance Metrics</h2>
@@ -1667,135 +1702,56 @@ if (favoritesSize > 1024 * 1024) { // 1MB limit
 
 <!-- PAGE 10: SCREENSHOTS -->
 <div class="page" id="page10">
-    <h1>10. Screenshots & User Interface</h1>
+    <div class="live-site-banner">
+        🏍️ View Live Application: <a href="https://ai-motorcycle.vercel.app/" target="_blank">https://ai-motorcycle.vercel.app/</a>
+    </div>
+    <h1>10. User Interface Views</h1>
 
     <div class="highlight-box">
-        <h3>Live Application</h3>
-        <p><strong>Visit:</strong> <a href="https://ai-motorcycle.vercel.app/" target="_blank">https://ai-motorcycle.vercel.app/</a></p>
-        <p>To complete this documentation, take screenshots of the live application and insert them in the placeholder sections below.</p>
+        <h3>🌐 Explore the Live Application</h3>
+        <p><strong>Visit:</strong> <a href="https://ai-motorcycle.vercel.app/" target="_blank" style="color: #667eea; font-weight: bold;">https://ai-motorcycle.vercel.app/</a></p>
+        <p>The live application showcases all features described in this documentation. Below are descriptions of the key UI views you'll find.</p>
     </div>
 
-    <h2>Screenshot 1: Home Page - Light Mode</h2>
-    <div class="screenshot-placeholder">
-        <h3>📸 INSERT SCREENSHOT HERE</h3>
-        <p><strong>What to capture:</strong></p>
-        <ul style="text-align: left; display: inline-block;">
-            <li>Full homepage view in light mode</li>
-            <li>Purple gradient header with logo</li>
-            <li>Statistics dashboard (4 cards)</li>
-            <li>Search bar and filter controls</li>
-            <li>Sidebar with country list</li>
-            <li>Shop cards in grid view</li>
-        </ul>
-    </div>
+    <h2>1. Home Page - Light Mode</h2>
+    <p><strong>Description:</strong> The default landing page featuring a purple gradient header with the "MotoShops EU" logo and tagline. The page displays an animated statistics dashboard with 4 cards showing total shops, countries covered, current filtered results, and favorites count. Below that is a search bar, filter controls (sort, contact filter, view mode), and export/reset buttons. The left sidebar shows the country list with flags, and the main content area displays shop cards in a responsive grid layout.</p>
+    <p><a href="https://ai-motorcycle.vercel.app/" target="_blank" style="color: #667eea;">→ View in browser</a></p>
 
-    <h2>Screenshot 2: Home Page - Dark Mode</h2>
-    <div class="screenshot-placeholder">
-        <h3>📸 INSERT SCREENSHOT HERE</h3>
-        <p><strong>What to capture:</strong></p>
-        <ul style="text-align: left; display: inline-block;">
-            <li>Same view but with dark mode enabled</li>
-            <li>Dark blue gradient background</li>
-            <li>White text on dark cards</li>
-            <li>Sun icon in theme toggle button</li>
-        </ul>
-    </div>
+    <h2>2. Home Page - Dark Mode</h2>
+    <p><strong>Description:</strong> Toggle dark mode by clicking the moon icon (🌙) in the top right corner. The interface transforms with a dark blue gradient background, dark card backgrounds, and light text for optimal readability. All interactive elements maintain their functionality with adjusted color schemes for consistency.</p>
+    <p><a href="https://ai-motorcycle.vercel.app/" target="_blank" style="color: #667eea;">→ View in browser (click moon icon)</a></p>
 
-    <h2>Screenshot 3: Country Sidebar Navigation</h2>
-    <div class="screenshot-placeholder">
-        <h3>📸 INSERT SCREENSHOT HERE</h3>
-        <p><strong>What to capture:</strong></p>
-        <ul style="text-align: left; display: inline-block;">
-            <li>Close-up of sidebar</li>
-            <li>Country list with flags (🇩🇪, 🇫🇷, 🇮🇹)</li>
-            <li>Shop count badges</li>
-            <li>Selected country highlighted</li>
-        </ul>
-    </div>
+    <h2>3. Country Sidebar Navigation</h2>
+    <p><strong>Description:</strong> The left sidebar displays all 27 European countries with their respective flag emojis (🇩🇪, 🇫🇷, 🇮🇹, etc.) and shop count badges. Each country item has a hover effect that shows a sliding animation. When a country is selected, it highlights with the primary gradient, and the cities for that country appear below.</p>
+    <p><a href="https://ai-motorcycle.vercel.app/" target="_blank" style="color: #667eea;">→ View in browser</a></p>
 
-    <h2>Screenshot 4: City Filtering</h2>
-    <div class="screenshot-placeholder">
-        <h3>📸 INSERT SCREENSHOT HERE</h3>
-        <p><strong>What to capture:</strong></p>
-        <ul style="text-align: left; display: inline-block;">
-            <li>Country selected (e.g., Germany)</li>
-            <li>City list expanded below country</li>
-            <li>Breadcrumb: All Countries › 🇩🇪 Germany › Berlin</li>
-            <li>Filtered shop results</li>
-        </ul>
-    </div>
+    <h2>4. City Filtering</h2>
+    <p><strong>Description:</strong> After selecting a country (e.g., Germany), the city list expands below showing all cities with motorcycle shops in that country. Each city shows its shop count. The breadcrumb navigation updates to show: "All Countries › 🇩🇪 Germany › Berlin". The main content area updates to show only shops from the selected location.</p>
+    <p><a href="https://ai-motorcycle.vercel.app/" target="_blank" style="color: #667eea;">→ View in browser (click a country, then a city)</a></p>
 
-    <h2>Screenshot 5: Shop Cards - Grid View</h2>
-    <div class="screenshot-placeholder">
-        <h3>📸 INSERT SCREENSHOT HERE</h3>
-        <p><strong>What to capture:</strong></p>
-        <ul style="text-align: left; display: inline-block;">
-            <li>3-4 column grid layout</li>
-            <li>Shop card details (name, address, contact)</li>
-            <li>Favorite star button</li>
-            <li>Brand badges</li>
-            <li>Action buttons (Website, Directions)</li>
-        </ul>
-    </div>
+    <h2>5. Shop Cards - Grid View</h2>
+    <p><strong>Description:</strong> The default view displays shops in a 3-4 column responsive grid. Each card shows: shop name, country flag, favorite star button (★), brand badge (if available), city and postal code, street address, phone number (clickable), email (clickable), opening hours, website button, and directions button. Cards lift on hover with a shadow effect.</p>
+    <p><a href="https://ai-motorcycle.vercel.app/" target="_blank" style="color: #667eea;">→ View in browser</a></p>
 
-    <h2>Screenshot 6: Shop Cards - List View</h2>
-    <div class="screenshot-placeholder">
-        <h3>📸 INSERT SCREENSHOT HERE</h3>
-        <p><strong>What to capture:</strong></p>
-        <ul style="text-align: left; display: inline-block;">
-            <li>Single column layout</li>
-            <li>More compact display</li>
-            <li>Same information as grid view</li>
-        </ul>
-    </div>
+    <h2>6. Shop Cards - List View</h2>
+    <p><strong>Description:</strong> Click the list view icon in the controls section to switch to a single-column layout. This view displays the same information as grid view but in a more compact, vertically-stacked format. Better for scanning through many results quickly and ideal for narrow screens.</p>
+    <p><a href="https://ai-motorcycle.vercel.app/" target="_blank" style="color: #667eea;">→ View in browser (click list icon)</a></p>
 
-    <h2>Screenshot 7: Search Functionality</h2>
-    <div class="screenshot-placeholder">
-        <h3>📸 INSERT SCREENSHOT HERE</h3>
-        <p><strong>What to capture:</strong></p>
-        <ul style="text-align: left; display: inline-block;">
-            <li>Search bar with text entered (e.g., "BMW")</li>
-            <li>Filtered results showing only BMW shops</li>
-            <li>Updated shop count</li>
-            <li>Clear button (X) visible</li>
-        </ul>
-    </div>
+    <h2>7. Search Functionality</h2>
+    <p><strong>Description:</strong> Type in the search bar (e.g., "BMW") to filter shops in real-time. The search looks through shop names, cities, streets, and brand information. Results update instantly, and the shop count reflects the filtered results. A clear button (X) appears when text is entered to quickly reset the search.</p>
+    <p><a href="https://ai-motorcycle.vercel.app/" target="_blank" style="color: #667eea;">→ View in browser (type in search)</a></p>
 
-    <h2>Screenshot 8: Loading State</h2>
-    <div class="screenshot-placeholder">
-        <h3>📸 INSERT SCREENSHOT HERE</h3>
-        <p><strong>What to capture:</strong></p>
-        <ul style="text-align: left; display: inline-block;">
-            <li>Loading screen (refresh page to capture)</li>
-            <li>Floating motorcycle emoji 🏍️</li>
-            <li>"Loading motorcycle shops..." text</li>
-            <li>Animated progress bar or skeleton cards</li>
-        </ul>
-    </div>
+    <h2>8. Loading State</h2>
+    <p><strong>Description:</strong> When the page first loads, you'll see skeleton loading cards with a shimmer animation effect. The loading screen features a floating motorcycle emoji (🏍️) with bounce animation and the text "Loading motorcycle shops across Europe..." with an animated progress indicator. This ensures a smooth user experience during data fetching.</p>
+    <p><a href="https://ai-motorcycle.vercel.app/" target="_blank" style="color: #667eea;">→ View in browser (refresh to see loading)</a></p>
 
-    <h2>Screenshot 9: Empty State</h2>
-    <div class="screenshot-placeholder">
-        <h3>📸 INSERT SCREENSHOT HERE</h3>
-        <p><strong>What to capture:</strong></p>
-        <ul style="text-align: left; display: inline-block;">
-            <li>Search for non-existent term</li>
-            <li>Large search icon 🔍</li>
-            <li>"No shops found" message</li>
-            <li>"Clear All Filters" button</li>
-        </ul>
-    </div>
+    <h2>9. Empty State</h2>
+    <p><strong>Description:</strong> When no shops match your filters or search, a helpful empty state appears with a large search icon (🔍), "No shops found" heading, and a message suggesting to adjust filters or search terms. A prominent "Clear All Filters" button helps users reset and start over.</p>
+    <p><a href="https://ai-motorcycle.vercel.app/" target="_blank" style="color: #667eea;">→ View in browser (search for nonsense text)</a></p>
 
-    <h2>Screenshot 10: Mobile Responsive View</h2>
-    <div class="screenshot-placeholder">
-        <h3>📸 INSERT SCREENSHOT HERE</h3>
-        <p><strong>What to capture:</strong></p>
-        <ul style="text-align: left; display: inline-block;">
-            <li>Use browser DevTools mobile view (iPhone/Android)</li>
-            <li>Single column layout</li>
-            <li>Stacked filter controls</li>
-            <li>Touch-friendly buttons</li>
-        </ul>
-    </div>
+    <h2>10. Mobile Responsive View</h2>
+    <p><strong>Description:</strong> The application is fully responsive. On mobile devices (or using browser DevTools mobile view), the layout adapts to a single column with stacked filter controls, full-width search bar, collapsible sidebar, and touch-friendly buttons. Typography and spacing are optimized for small screens while maintaining full functionality.</p>
+    <p><a href="https://ai-motorcycle.vercel.app/" target="_blank" style="color: #667eea;">→ View in browser (resize window or use mobile)</a></p>
 
     <h2>UI Element Summary</h2>
 
@@ -1879,6 +1835,9 @@ if (favoritesSize > 1024 * 1024) { // 1MB limit
 
 <!-- APPENDIX -->
 <div class="page">
+    <div class="live-site-banner">
+        🏍️ View Live Application: <a href="https://ai-motorcycle.vercel.app/" target="_blank">https://ai-motorcycle.vercel.app/</a>
+    </div>
     <h1>Appendix: Quick Reference</h1>
 
     <h2>Environment Variables</h2>
