@@ -1,9 +1,9 @@
-import EnhancedMotorcycleShops from "@/components/MotorcycleShops/EnhancedUI";
+import PremiumMotorcycleShops from "@/components/MotorcycleShops/PremiumUI";
 
 export default function Home() {
   return (
     <div>
-      <EnhancedMotorcycleShops />
+      <PremiumMotorcycleShops />
     </div>
   );
 }
